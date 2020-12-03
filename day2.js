@@ -999,42 +999,61 @@ input = `6-7 z: dqzzzjbzz
 4-7 h: hhxhzmwhhhh
 11-16 r: rrrrrrrrrrrrrrrlr`
 
-// Get Data
-input = input.replace(/:/gi, "");
-input = input.replace(/-/gi, " ");
-input = input.replace(/:/gi, "")
-input = input.replace(/\r?\n|\r/gi, " ")
-input = input.split(' ')
-let start =[];
-let end =[];
-let letter =[];
-let value =[];
+// Unsure of the best wat to extract data.
+// Decided to remove :, -, return line then split on a space so the values go into one large array.
+// Then seperate into 4 arrays for the first number, end number, letter and string.
+// Store 4 arrays in a object
 
-for(i = 0; i < input.length; i = i + 4) {
-  start.push(input[i])  
-  end.push(input[i+1])
-  letter.push(input[i+2])   
-  value.push(input[i+3])  
+// Get Data
+function getInput (input) {
+    input = input.replace(/:/gi, "");
+    input = input.replace(/-/gi, " ");
+    input = input.replace(/\r?\n|\r/gi, " ");
+    input = input.split(' ');
+    obj = {
+        start: [],
+        end: [],
+        letter: [],
+        value:[]
+    }
+    for(i = 0; i < input.length; i = i + 4) {
+        obj.start.push(input[i])  
+        obj.end.push(input[i+1])
+        obj.letter.push(input[i+2])   
+        obj.value.push(input[i+3])  
+    }
+    return obj
 }
+
+let inputArrays = getInput(input)
+
 
 // Part 1
-let acceptableOne = 0;
-let total = 0
-for(i = 0; i < start.length; i++) {
-    let total = value[i].split(letter[i]).length -1
-    if ((total >= start[i]) &&  (total <= end[i])) {
-        acceptableOne ++
+// splits string on letter to be found into an array and then uses length -1 to get number of occurances.
+
+function partOne (obj) {
+    let acceptableOne = 0;
+    for(i = 0; i < obj.start.length; i++) {
+        let total = obj.value[i].split(obj.letter[i]).length -1
+        if ((total >= obj.start[i]) &&  (total <= obj.end[i])) {
+            acceptableOne ++
+        }
     }
+    console.log(acceptableOne)
 }
-console.log(acceptableOne)
+
+partOne(obj)
 
 // Part 2
-let acceptableTwo = 0;
-for(i = 0; i < start.length; i++) {
-    if ((value[i].charAt(start[i] -1) !== letter[i]) && (value[i].charAt(end[i] -1) === letter[i]) ||
-    (value[i].charAt(start[i] -1) === letter[i]) && (value[i].charAt(end[i] -1) !== letter[i])) {
-        acceptableTwo ++
-    }
-}
-console.log(acceptableTwo)
 
+function partTwo(obj) {
+    let acceptableTwo = 0;
+    for(i = 0; i < obj.start.length; i++) {
+        if ((obj.value[i].charAt(obj.start[i] -1) !== obj.letter[i]) && (obj.value[i].charAt(obj.end[i] -1) === obj.letter[i]) ||
+        (obj.value[i].charAt(obj.start[i] -1) === obj.letter[i]) && (obj.value[i].charAt(obj.end[i] -1) !== obj.letter[i])) {
+            acceptableTwo ++
+        }
+    }
+    console.log(acceptableTwo)
+}
+partTwo(obj)
