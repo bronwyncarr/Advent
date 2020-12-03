@@ -6,6 +6,6 @@ Day | Part 1 | Part 2
 ----- | ------ | --------- |
 Day 1 | ✅ |  ✅
 Day 2 | ✅ |  ✅
-Day 3 |
+Day 3 | ✅ |  ✅
 
 https://adventofcode.com/2020/about
