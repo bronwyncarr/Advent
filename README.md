@@ -1,6 +1,7 @@
 # Advent of Code 2020 Challenges
 
-🎄🎅 Challenging myself through December 2020 with the Advent of Code challenges, created by Eric Wastl.
+⭐🎄🎅 Challenging myself with the Advent of Code 2020 challenges, created by Eric Wastl.
+
 
 Goal: 10 stars :star:!
 
