@@ -3,6 +3,8 @@ const path = require("path");
 const dataPath = path.join(__dirname, "input.txt");
 const data = fs.readFileSync(dataPath, "utf-8").split("\n");
 
+//Part 1
+// convert to binary, slice, convert to dec, multiply, find the largest
 const binaryData = data.map((element) => {
   return element.replace(/B|R/g, 1).replace(/F|L/g, 0);
 });
@@ -24,4 +26,25 @@ for (i = 0; i < binaryData.length; i++) {
 
 console.log(Math.max(...total));
 
-// convert to binary, slice, convert to dec, multiply, find the largest
+
+
+// Part 2
+// sort array, find missing number
+// let sortedTotal = total.sort(function(a, b){return a - b});
+
+// for (i = 48; i < 818; i++) {
+//   if (!sortedTotal.includes(i)) {
+//     console.log(i)
+//     break;
+//   }
+// }
+
+// OR
+
+for (i = Math.min(...total); i < 818; i++) {
+  if (!total.includes(i)) {
+    console.log(i)
+    break;
+  }
+}
+
