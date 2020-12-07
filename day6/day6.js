@@ -3,19 +3,21 @@ const path = require("path");
 const dataPath = path.join(__dirname, "input.txt");
 const data = fs.readFileSync(dataPath, "utf-8").split("\n\n");
 
-
-
+// Part One
 cleaned = data.map(element => element.replace(/\n/gi, ""))
 
-total = 0;
-cleaned.map(element => {
-  set = new Set(element.split(""))
-  total = total + set.size
-})
+function getTotal(cleaned) {
+  total = 0;
+  cleaned.map(element => {
+    set = new Set(element.split(""))
+    total = total + set.size
+  })
+}
 
-console.log(total)
+getTotal(cleaned)
+console.log(`The total for part1 is: ${total}`)
 
-// part 2 IN PROGRESS!!!
+// Part Two
 
 newTotal = 0
 data.map(element => {
