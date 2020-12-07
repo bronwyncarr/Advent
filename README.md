@@ -4,9 +4,9 @@ Advent of Code is a series of programming puzzles created by Eric Wastl. One is 
 
 You can learn more, view puzzles for 2020 and previous years [here](https://adventofcode.com/2020/about)
 
-I'll be challenging myself with some of these challenges while learning JavaScript.
+I'll be challenging myself while learning JavaScript.
 
-Goal: 10 stars :star:!
+My Goal: 10 stars :star:!
 
 Day | Part 1 | Part 2
 ----- | ------ | --------- |
