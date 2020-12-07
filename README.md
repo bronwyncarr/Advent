@@ -1,6 +1,10 @@
-# Advent of Code 2020 Challenges
+# ⭐🎄🎅 Advent of Code 2020 Challenges 🎅🎄⭐
 
-⭐🎄🎅 Challenging myself with the Advent of Code 2020 challenges, created by Eric Wastl.
+Advent of Code is a series of programming puzzles created by Eric Wastl. One is released every day during December in the lead up to Christmas - 25 in total. 
+
+You can learn more, view puzzles for 2020 and previous years [here](https://adventofcode.com/2020/about)
+
+I'll be challenging myself with some of these challenges while learning JavaScript.
 
 Goal: 10 stars :star:!
 
@@ -15,6 +19,6 @@ Day 6 |  |
 Day 7 |  |
 Day 8 |  |
 Day 9 |  |
-Day 10 |  |updated readme
+Day 10 |  | 
 
 https://adventofcode.com/2020/about
