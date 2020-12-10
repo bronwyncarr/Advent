@@ -19,6 +19,7 @@ stringData = data.split("\n")
 data = stringData.map(string => parseInt(string))
 
 // Part A
+
 pointer = 25;
 let isItValid = true;
 lastNumbers = []
@@ -35,27 +36,28 @@ while (isItValid) {
         }
     }
 }
-console.log(data[pointer])
-
-console.log(pointer)
+console.log(`The value of Part A is: ${data[pointer]}`)
+console.log(`The index of Part A is: ${data[pointer]}`)
 
 //Part B
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
-for (a = 0; a < 555; a++) {
+loop1:
+for (a = 0; a < data[pointer] - 2; a++) {
     let total = 0;
     let arrOfNums = [];
     k = a;
+    loop2:
     while (total < data[pointer]) {
         arrOfNums.push(data[k]);
         total = arrOfNums.reduce(reducer, 0);
         if (total === data[pointer]) {
             const min = Math.min(...arrOfNums)
             const max = Math.max(...arrOfNums)
-            console.log(min + max)
-            break;
+            console.log(`The total for Part B is: ${min + max}`)
+            debugger;
+            break loop1;
         }
         k++;
     }
 }
-    
