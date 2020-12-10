@@ -40,23 +40,22 @@ console.log(data[pointer])
 console.log(pointer)
 
 //Part B
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
-counter = 0;
-
-
-
-
-
-while (isItValid) {
-    isItValid = false;
-    for (i = 0; i < data[pointer]; i++) {
-        for (j = (i+1); j < data[pointer]; j++) {
-            if ((data[i] + data[j]) === data[pointer]) {
-                pointer ++
-                isItValid = true;
-                break;
-            }
+for (a = 0; a < 555; a++) {
+    let total = 0;
+    let arrOfNums = [];
+    k = a;
+    while (total < data[pointer]) {
+        arrOfNums.push(data[k]);
+        total = arrOfNums.reduce(reducer, 0);
+        if (total === data[pointer]) {
+            const min = Math.min(...arrOfNums)
+            const max = Math.max(...arrOfNums)
+            console.log(min + max)
+            break;
         }
+        k++;
     }
 }
-
+    
