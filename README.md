@@ -6,8 +6,7 @@ You can learn more, view puzzles for 2020 and previous years [here](https://adve
 
 I'll be challenging myself while learning JavaScript.
 
-My Goal: 10 stars :star:!
-New goal: 15 stars :star:!
+My Goal: 10 stars :star:! ----- New goal: 15 stars :star:!
 
 Day | Part 1 | Part 2
 ----- | ------ | --------- |
